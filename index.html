@@ -1,148 +1,273 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Developer Portfolio</title>
+    <title>Rithvik | Frontend Web Developer</title>
 
-    .contact-form {
-     max-width: 500px;
-     margin: 30px auto;
-     display: flex;
-     flex-direction: column;
-     gap: 15px;
- }
-
- .contact-form input,
- .contact-form textarea {
-     padding: 15px;
-     border: 1px solid #334155;
-     border-radius: 8px;
-     background: #1e293b;
-     color: white;
-     font-size: 16px;
-}
-
- .contact-form textarea {
-     min-height: 120px;
-     resize: vertical;
- }
-
-  .contact-form button {
-     padding: 14px;
-     background: #0284c7;
-     color: white;
-     border: none;
-     border-radius: 8px;
-     cursor: pointer;
-     font-size: 16px;
-}
-
- .contact-form button:hover {
-     background: #0369a1;
-} <style>
+    <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            line-height: 1.6;
+            background: #080d1c;
+            color: #ffffff;
+            line-height: 1.7;
         }
+
+        :root {
+            --purple: #a78bfa;
+            --blue: #38bdf8;
+            --card: #151d32;
+        }
+
+        /* NAVIGATION */
 
         nav {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding: 20px 8%;
-            background: #1e293b;
+            background: #10172a;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav h2 {
-            color: #38bdf8;
+            color: var(--purple);
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
         }
 
+        nav a:hover {
+            color: var(--purple);
+        }
+
+        /* HERO SECTION */
+
         .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 90px 20px;
+            padding: 60px 20px;
+            background: radial-gradient(
+                circle at top,
+                #30205b,
+                #080d1c 65%
+            );
+        }
+
+        .hero .tag {
+            color: var(--purple);
+            border: 1px solid #7153b5;
+            padding: 7px 18px;
+            border-radius: 30px;
+            margin-bottom: 20px;
         }
 
         .hero h1 {
-            font-size: 42px;
-            color: #38bdf8;
+            font-size: 55px;
+            line-height: 1.2;
             margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: var(--purple);
         }
 
         .hero p {
             color: #cbd5e1;
-            margin-bottom: 25px;
+            max-width: 550px;
+            margin-bottom: 28px;
         }
 
         .btn {
             display: inline-block;
-            background: #0284c7;
-            color: white;
             padding: 12px 25px;
+            background: linear-gradient(
+                90deg,
+                #7c3aed,
+                #2563eb
+            );
+            color: white;
             border-radius: 8px;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
         }
 
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 25px #7c3aed66;
+        }
+
+        /* GENERAL SECTIONS */
+
         .section {
-            padding: 50px 8%;
+            padding: 80px 8%;
             text-align: center;
         }
 
         .section h2 {
-            color: #38bdf8;
-            margin-bottom: 25px;
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: var(--purple);
         }
+
+        .subtitle {
+            color: #94a3b8;
+            margin-bottom: 35px;
+        }
+
+        /* ABOUT */
+
+        .about-box {
+            max-width: 750px;
+            margin: auto;
+            padding: 30px;
+            background: var(--card);
+            border: 1px solid #29334c;
+            border-radius: 15px;
+        }
+
+        .about-box p {
+            color: #cbd5e1;
+        }
+
+        /* SKILLS AND PROJECTS */
 
         .cards {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 22px;
         }
 
         .card {
-            background: #1e293b;
-            padding: 25px;
-            border-radius: 12px;
-            width: 250px;
+            background: var(--card);
+            border: 1px solid #29334c;
+            padding: 28px 20px;
+            border-radius: 15px;
+            width: 260px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: var(--purple);
         }
 
         .card h3 {
+            color: var(--blue);
             margin-bottom: 10px;
         }
+
+        .card p {
+            color: #cbd5e1;
+        }
+
+        .project-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: var(--purple);
+            text-decoration: none;
+        }
+
+        /* CONTACT */
+
+        .contact-form {
+            max-width: 500px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px;
+            background: var(--card);
+            color: white;
+            border: 1px solid #39435d;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: Arial, sans-serif;
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: 2px solid var(--purple);
+        }
+
+        /* FOOTER */
 
         footer {
             text-align: center;
             padding: 25px;
-            background: #1e293b;
-            color: #cbd5e1;
+            background: #10172a;
+            color: #94a3b8;
         }
 
+        /* MOBILE RESPONSIVE */
+
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 30px;
-            }
 
             nav {
-                padding: 18px 5%;
+                padding: 15px 5%;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+
+            nav h2 {
+                font-size: 19px;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .hero h1 {
+                font-size: 36px;
             }
 
             .section {
-                padding: 35px 5%;
+                padding: 55px 5%;
+            }
+
+            .section h2 {
+                font-size: 27px;
+            }
+
+            .card {
+                width: 100%;
             }
         }
     </style>
@@ -150,132 +275,229 @@
 
 <body>
 
+    <!-- NAVIGATION -->
+
     <nav>
-        <h2>MyPortfolio</h2>
-        <a href="#contact">Contact</a>
+        <h2>Rithvik.</h2>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
+    <!-- HERO -->
+
     <section class="hero">
-        <h1>Hello, I'm a Web Developer!</h1>
+
+        <div class="tag">Frontend Web Developer</div>
+
+        <h1>Hi, I'm <span>Rithvik</span></h1>
 
         <p>
-            I create modern and beautiful websites.
+            I create modern, responsive and
+            beautiful websites using HTML,
+            CSS and JavaScript.
         </p>
 
         <a href="#projects" class="btn">
-            View My Work
+            Explore My Projects
         </a>
-        <button onclick="sayHello()" class="btn">
-    Click Me
-</button>
+
     </section>
 
-    <section class="section">
+    <!-- ABOUT -->
+
+    <section class="section" id="about">
+
         <h2>About Me</h2>
 
-        <p>
-            I am learning web development
-            and building creative websites.
+        <p class="subtitle">
+            Get to know me
         </p>
+
+        <div class="about-box">
+
+            <p>
+                Hello! I'm Rithvik, an aspiring
+                Frontend Web Developer.
+
+                I enjoy learning web development
+                and creating attractive websites.
+
+                My goal is to build useful,
+                creative and professional
+                websites for people and businesses.
+            </p>
+
+        </div>
+
     </section>
 
-    <section class="section">
+    <!-- SKILLS -->
+
+    <section class="section" id="skills">
+
         <h2>My Skills</h2>
+
+        <p class="subtitle">
+            Technologies I'm learning
+        </p>
 
         <div class="cards">
 
             <div class="card">
                 <h3>HTML</h3>
-                <p>Website structure</p>
+                <p>
+                    Creating the structure
+                    of modern websites.
+                </p>
             </div>
 
             <div class="card">
                 <h3>CSS</h3>
-                <p>Website design</p>
+                <p>
+                    Designing beautiful
+                    and responsive layouts.
+                </p>
             </div>
 
             <div class="card">
                 <h3>JavaScript</h3>
-                <p>Website functionality</p>
+                <p>
+                    Adding interactive
+                    website features.
+                </p>
             </div>
 
         </div>
+
     </section>
 
+    <!-- PROJECTS -->
+
     <section class="section" id="projects">
+
         <h2>My Projects</h2>
+
+        <p class="subtitle">
+            Some of my practice work
+        </p>
 
         <div class="cards">
 
             <div class="card">
-                <h3>My First Website</h3>
-                <p>My first HTML project.</p>
+                <h3>Personal Portfolio</h3>
+                <p>
+                    My personal website
+                    built with HTML and CSS.
+                </p>
+                <a href="#home" class="project-link">
+                    My Portfolio
+                </a>
             </div>
 
             <div class="card">
-                <h3>Portfolio Website</h3>
-                <p>A personal website design.</p>
+                <h3>Contact Form</h3>
+                <p>
+                    A contact form with
+                    JavaScript validation.
+                </p>
+                <a href="#contact" class="project-link">
+                    View Contact Form
+                </a>
+            </div>
+
+            <div class="card">
+                <h3>Restaurant Website</h3>
+                <p>
+                    A practice project
+                    for a restaurant business.
+                </p>
+                <a href="#contact" class="project-link">
+                    Coming Soon
+                </a>
             </div>
 
         </div>
+
     </section>
+
+    <!-- CONTACT -->
 
     <section class="section" id="contact">
 
-    <h2>Contact Me</h2>
+        <h2>Contact Me</h2>
 
-    <p>Let's create something amazing!</p>
+        <p class="subtitle">
+            Have a project idea? Let's talk!
+        </p>
 
-    <form class="contact-form" id="myForm">
+        <form class="contact-form" id="myForm">
 
-        <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            required
-        >
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Your Email"
-            required
-        >
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
 
-        <textarea
-            id="message"
-            placeholder="Your Message"
-            required
-        ></textarea>
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                required
+            ></textarea>
 
-        <button type="submit">
-            Send Message
-        </button>
+            <button type="submit" class="btn">
+                Send Message
+            </button>
 
-    </form>
+        </form>
 
-</section>
+    </section>
+
+    <!-- FOOTER -->
+
     <footer>
-        <p>My Portfolio | Learning Web Development</p>
+        <p>© 2026 Rithvik | Frontend Web Developer</p>
+        <p>Built with HTML, CSS and JavaScript</p>
     </footer>
 
-<script>
+    <!-- JAVASCRIPT -->
 
-function sayHello() {
-    alert("Hello! Welcome to my website!");
-}
+    <script>
 
-document.getElementById("myForm").addEventListener("submit", function(event) {
+        function sayHello() {
+            alert("Hello! Welcome to my website!");
+        }
 
-    event.preventDefault();
+        document.getElementById("myForm")
+        .addEventListener("submit", function(event) {
 
-    let name = document.getElementById("name").value;
+            event.preventDefault();
 
-    alert("Thank you " + name + "! Your form works!");
+            let name =
+                document.getElementById("name").value;
 
-    document.getElementById("myForm").reset();
+            alert(
+                "Thank you " + name +
+                "! Your message has been received for this demo."
+            );
 
-});
+            document.getElementById("myForm").reset();
 
-</script>
+        });
 
+    </script>
+
+</body>
+</html>
